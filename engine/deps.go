@@ -9,7 +9,7 @@ type DependencyInfo struct {
 type Dependency interface {
 	Install() error   // Install the dependency (this should be idempotent)
 	Uninstall() error // Uninstall the dependency (this should be idempotent)
-	Info()
+	Info() DependencyInfo
 }
 
 var dependencies = []Dependency{
