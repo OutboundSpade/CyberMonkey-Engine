@@ -1,6 +1,0 @@
-modules:
-  - ssh:
-    - allow-empty-password:
-      - points: 10
-  - media-files:
-    - points: 5

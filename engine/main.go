@@ -7,22 +7,27 @@ import (
 	"runtime"
 )
 
-func start() error {
+const (
+	INSTALL_DIR_LINUX   = "/opt/cybermonkey-engine"
+	INSTALL_DIR_WINDOWS = "C:\\Program Files\\CyberMonkey-Engine"
+)
+
+func Start() error {
 	err := ensure_is_admin()
 	if err != nil {
 		return err
 	}
-	switch runtime.GOOS {
-	case "windows":
-		return fmt.Errorf("This is an unsupported OS!")
-	case "linux":
-		err := setup_linux()
-		if err != nil {
-			return err
-		}
-	default:
-		return fmt.Errorf("This is an unsupported OS!")
+
+	// err = daemonize()
+	// if err != nil {
+	// 	return err
+	// }
+
+	err = install_dependencies()
+	if err != nil {
+		return err
 	}
+
 	return nil
 }
 
