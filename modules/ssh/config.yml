@@ -1,0 +1,5 @@
+name: ssh
+description: SSH configuration
+
+compatability:
+  - script: compatable.py
