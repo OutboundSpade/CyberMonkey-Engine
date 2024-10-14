@@ -1,12 +1,20 @@
 package main
 
-import "github.com/OutboundSpade/CyberMonkey-Engine/engine"
+import (
+	"os"
+
+	"github.com/OutboundSpade/CyberMonkey-Engine/engine"
+)
 
 type BundleConfig struct {
 	Modules []string `yaml:"modules"`
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "run" {
+		must(engine.RunBackground())
+		return
+	}
 	must(engine.Start())
 }
 

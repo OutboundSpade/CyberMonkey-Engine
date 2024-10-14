@@ -1,7 +1,0 @@
-name: allow-empty-passwords
-description: Allow empty passwords
-
-break:
-  - script: break.py
-check:
-  - script: check.py

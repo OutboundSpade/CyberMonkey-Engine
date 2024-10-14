@@ -18,17 +18,26 @@ func Start() error {
 		return err
 	}
 
-	// err = daemonize()
-	// if err != nil {
-	// 	return err
-	// }
-
 	err = install_dependencies()
 	if err != nil {
 		return err
 	}
 
+	err = daemonize()
+	if err != nil {
+		return err
+	}
+
 	return nil
+}
+
+func RunBackground() error { // This function is called by the daemon
+	err := ensure_is_admin()
+	if err != nil {
+		return err
+	}
+
+	return runScoreReport()
 }
 
 func ensure_is_admin() error {
