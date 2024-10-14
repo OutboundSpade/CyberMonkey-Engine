@@ -7,6 +7,10 @@ import (
 	"path"
 )
 
+type BundleConfig struct {
+	Modules []string `yaml:"modules"`
+}
+
 func createBundle(config *BundleConfig, modulesDir string, outputPath string) error {
 	// Create the output file
 	file, err := os.Create(outputPath)

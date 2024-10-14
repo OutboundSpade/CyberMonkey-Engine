@@ -1,6 +1,8 @@
 name: has-media-files
 description: Contains files with media extensions ie (.mp3)
 
+solution: Remove media files from the system
+
 break:
   script: break.py
 check:

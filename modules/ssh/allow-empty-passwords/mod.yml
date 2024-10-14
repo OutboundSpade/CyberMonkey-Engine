@@ -1,6 +1,8 @@
 name: allow-empty-passwords
 description: Allow empty passwords
 
+solution: Disallow empty passwords on ssh
+
 break:
   script: break.py
 check:
